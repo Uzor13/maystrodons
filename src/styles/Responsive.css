@@ -1,0 +1,136 @@
+@media screen and (min-width: 320px) and (max-width: 580px){
+    :root {
+        --font-base: 1rem;
+        --font-medium: 1rem;
+        --font-large: 2rem;
+        --font-larger: 2.5rem;
+    }
+
+    .grid-container {
+        grid-template-rows: 620px 550px 1fr 550px 1fr 630px 150px;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .pop-up-nav {
+        width: 100vw;
+    }
+
+    .outer-nav {
+        width: 100vw;
+    }
+
+    .outer-nav i {
+        padding-right: 2rem;
+        font-size: var(--font-large);
+    }
+
+    .hero {
+        width: 100vw;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        width: 100vw;
+    }
+
+    .hero-content__spinner {
+        left: 50%;
+        top: 40%;
+        width: 150px;
+        height: 80px;
+    }
+
+    .cta-btn {
+        display: none;
+    }
+
+    .hero-content__text {
+        width: 70%;
+        text-align: left;
+        margin-left: -6rem;
+    }
+
+    .about-section__content {
+        flex-direction: column;
+    }
+
+    .about-section {
+        width: 100vw;
+    }
+
+    .about-section__img img {
+        width: 16rem;
+    }
+
+    .about-section__text p {
+        width: 100%;
+    }
+
+    .news-section {
+        width: 100vw;
+        height: auto;
+    }
+
+    .news-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-card {
+        width: 250px;
+    }
+
+    .players-section {
+        width: 100vw;
+        height: auto;
+    }
+
+    .player-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .fixtures-section {
+        width: 100vw;
+        height: auto;
+    }
+
+    .fixture-detail {
+        flex-direction: column;
+    }
+
+    .fixture-score {
+        font-size: var(--font-large);
+        font-weight: var(--font-bold);
+    }
+
+    .team-logo img {
+        width: 70px;
+    }
+
+
+    .team-logo i {
+        font-size: var(--font-medium);
+    }
+
+    .schedules {
+        width: 100vw;
+        grid-template-columns:  1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .schedule {
+        width: 350px;
+    }
+
+    .stats-section {
+        width: 100vw;
+    }
+
+
+}
+
+@media screen and (min-width: 6){
+
+}

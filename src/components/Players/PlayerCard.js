@@ -1,20 +1,19 @@
 import React from 'react';
-import Image from '../../assets/img/chris-mcintosh-EzWrW_39OcU-unsplash.jpg'
 
-const PlayerCard = () => {
+const PlayerCard = ({data}) => {
+
     return (
-        <div className="card">
-            <img src={Image} alt=""/>
-                <div className="card-text">
-                    <div>
-                        <h1>Lorem ipsum dolor sit amet</h1>
-                        <div className="divider"/>
-                        <p>Forward</p>
-                    </div>
-                    <div className="card-text__number">
-                        <h2>12</h2>
-                    </div>
+        <div className="news-card" style={{width: "90%"}}>
+            <img src={data.image} alt=""/>
+            <div className="news-card-text">
+                <div>
+                    <h1 style={{fontSize: "22px"}}>{data.first_name}</h1>
+                    <p>{data.position}</p>
                 </div>
+                <div className="card-text__number">
+                    <h2>{data.player_number}</h2>
+                </div>
+            </div>
         </div>
     );
 };

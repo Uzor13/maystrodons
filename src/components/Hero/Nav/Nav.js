@@ -1,15 +1,20 @@
 import React from 'react';
+import Logo from './../../../assets/img/MAYSTRODONS.svg'
+const Nav = ({show, setShow}) => {
 
-const Nav = () => {
+    if (!show) {
+        return null
+    }
+
     return (
         <nav className="pop-up-nav">
             <div className="outer-nav">
                 <a href="/" className="nav-brand">
-                    <img src="./../../../assets/img/MAYSTRODONS.svg" className="logo" alt=""/>
-                        <h1>MAYSTRODONS</h1>
+                    <img src={Logo} className="logo" alt=""/>
+                        <h1 style={{fontSize: "20px"}}>MAYSTRODONS</h1>
                 </a>
                 <div>
-                    <i className="fas fa-times"/>
+                    <i className="fas fa-times" onClick={() => setShow(false)}/>
                 </div>
             </div>
             <ul className="pop-up-nav__ul">
