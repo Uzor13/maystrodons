@@ -6,7 +6,7 @@ const Footer = () => {
             <h1>&copy; Maystrodons 2021</h1>
             <p>
                 Coded with <i className="fas fa-heart" style={{color: "red"}}/> by
-                <a href="https://uzor.codes">Uzor</a>
+                <a href="https://uzor.codes"> Uzor</a>
             </p>
         </footer>
     );

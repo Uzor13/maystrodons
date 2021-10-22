@@ -4,7 +4,7 @@ import NewsCards from "./NewsCards";
 
 const News = () => {
     return (
-        <section className="news-section">
+        <section className="news-section" id="news">
             <NewsHeader/>
             <NewsCards/>
         </section>

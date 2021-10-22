@@ -7,7 +7,6 @@ const NewsCards = () => {
             <NewsCard/>
             <NewsCard/>
             <NewsCard/>
-            <NewsCard/>
         </div>
     );
 };

@@ -13,7 +13,7 @@ const AuthProvider = ({children}) => {
 
     const registerUser = async (data) => {
        await axios
-            .post('http://localhost:1337/auth/local/register', data)
+            .post('https://maystrodon-strapi.herokuapp.com/auth/local/register', data)
             .then(response => {
                 setUser(response.data.user)
                 setRes(response)
@@ -30,7 +30,7 @@ const AuthProvider = ({children}) => {
 
     const loginUser = async (data) => {
         await axios
-            .post('http://localhost:1337/auth/local', data)
+            .post('https://maystrodon-strapi.herokuapp.com/auth/local', data)
             .then(response => {
                 setUser(response.data.user)
                 setRes(response)

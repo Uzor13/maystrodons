@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Logo from './../../../assets/img/MAYSTRODONS.svg'
 import Nav from "../Nav/Nav";
+import {Link} from "react-router-dom";
 
 const Header = () => {
 
@@ -16,7 +17,9 @@ const Header = () => {
                         <h1 style={{fontSize: "20px"}}>MAYSTRODONS</h1>
                 </a>
                 <div className="cta-nav">
-                    <button className="cta-btn">Get in Touch</button>
+                    <Link to={`/contact`}>
+                        <button className="cta-btn">Get in Touch</button>
+                    </Link>
                     <i className="fas fa-bars" onClick={() => setShow(true)}/>
                 </div>
             </div>

@@ -20,6 +20,7 @@ import Dashboard from "./components/Admin/Dashboard";
 import AddPlayer from "./components/Admin/Players/AddPlayer";
 import UpcomingFixture from "./components/Admin/Fixtures/UpcomingFixture";
 import Fixture from "./components/Admin/Fixtures/Fixture";
+import Contact from "./components/Contact/Contact";
 
 function App() {
     return (
@@ -38,12 +39,7 @@ function App() {
                                 <Footer/>
                             </div>
                         </Route>
-                        <Route path="/admin/login" component={Login} exact/>
-                        <Route path="/admin/register" component={Register}/>
-                        <Route path="/admin/" exact component={Dashboard}/>
-                        <Route path="/admin/add-player" component={AddPlayer}/>
-                        <Route path="/admin/add-upcoming" component={UpcomingFixture}/>
-                        <Route path="/admin/add-fixture" component={Fixture}/>
+                        <Route component={Contact} path="/contact"/>
                     </Switch>
                 </Router>
             </DataProvider>

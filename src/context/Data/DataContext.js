@@ -20,7 +20,7 @@ const DataProvider = ({children}) => {
     const [message, setMessage] = useState("");
 
     const getPlayers = async () => {
-        await axios.get(`http://localhost:1337/players`)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/players`)
             .then(res => {
                 setPlayerData(res.data)
                 console.log(res.data)
@@ -31,7 +31,7 @@ const DataProvider = ({children}) => {
     }
 
     const getUpcomingFixtures = async () => {
-        await axios.get(`http://localhost:1337/upcoming-fixtures?_limit=1&_sort=id:DESC`)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/upcoming-fixtures?_limit=1&_sort=id:DESC`)
             .then(res => {
                 setUpcomingFixtures(res.data)
                 console.log(res.data)
@@ -42,7 +42,7 @@ const DataProvider = ({children}) => {
     }
 
     const getFixtures = async () => {
-        await axios.get(`http://localhost:1337/fixtures?_limit=3&_sort=id:DESC`)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/fixtures?_limit=3&_sort=id:DESC`)
             .then(res => {
                 setFixtures(res.data)
                 console.log(res.data)
@@ -60,7 +60,7 @@ const DataProvider = ({children}) => {
     }, [])
 
     const addPlayer = async (data) => {
-        await axios.post(`http://localhost:1337/players`, data, config)
+        await axios.post(`https://maystrodon-strapi.herokuapp.com/players`, data, config)
             .then(res => {
                 setMessage("Player Added Successfully")
             }).catch(err => {
@@ -68,7 +68,7 @@ const DataProvider = ({children}) => {
             })
     }
     const addUpcomingFixture = async (data) => {
-        await axios.post(`http://localhost:1337/upcoming-fixtures`, data, config)
+        await axios.post(`https://maystrodon-strapi.herokuapp.com/upcoming-fixtures`, data, config)
             .then(res => {
                 setMessage("Upcoming Fixture Added Successfully")
             }).catch(err => {
@@ -76,9 +76,18 @@ const DataProvider = ({children}) => {
             })
     }
     const addFixture = async (data) => {
-        await axios.post(`http://localhost:1337/fixtures`, data, config)
+        await axios.post(`https://maystrodon-strapi.herokuapp.com/fixtures`, data, config)
             .then(res => {
                 setMessage("Fixture Added Successfully")
+            }).catch(err => {
+                console.log("Error", err.response)
+            })
+    }
+
+    const addContact = async (data) => {
+        await axios.post(`http://localhost:1337/contacts`, data)
+            .then(res => {
+                setMessage("Thanks for reaching out, we'll get back to you shortly")
             }).catch(err => {
                 console.log("Error", err.response)
             })
@@ -94,7 +103,8 @@ const DataProvider = ({children}) => {
                 addUpcomingFixture,
                 upcomingFixtures,
                 addFixture,
-                fixtures
+                fixtures,
+                addContact
             }}>
             {children}
         </DataContext.Provider>
