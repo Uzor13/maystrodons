@@ -12,10 +12,10 @@ const Header = () => {
         <Nav show={show} setShow={setShow}/>
         <header>
             <div className="outer-nav">
-                <a href="/" className="nav-brand">
+                <Link to="/" className="nav-brand">
                     <img src={Logo} className="logo" alt=""/>
                         <h1 style={{fontSize: "20px"}}>MAYSTRODONS</h1>
-                </a>
+                </Link>
                 <div className="cta-nav">
                     <Link to={`/contact`}>
                         <button className="cta-btn">Get in Touch</button>
