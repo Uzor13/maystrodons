@@ -49,10 +49,10 @@ const Contact = () => {
                 <Nav show={show} setShow={setShow}/>
                 <header>
                     <div className="outer-nav">
-                        <a href="/" className="nav-brand">
+                        <Link to="/" className="nav-brand">
                             <img src={Logo} className="logo" alt=""/>
                             <h1 style={{fontSize: "20px"}}>MAYSTRODONS</h1>
-                        </a>
+                        </Link>
                         <div className="cta-nav">
                             <i className="fas fa-bars" onClick={() => setShow(true)}/>
                         </div>
