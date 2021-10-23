@@ -3,6 +3,9 @@ import Nav from "../Hero/Nav/Nav";
 import Logo from "../../assets/img/MAYSTRODONS.svg";
 import {useFormik} from "formik";
 import {DataContext} from "../../context/Data/DataContext";
+import {Helmet} from "react-helmet";
+import {Link} from "react-router-dom";
+
 
 const Contact = () => {
 
@@ -45,6 +48,10 @@ const Contact = () => {
 
     return (
         <div className="contact">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Maystrodons - Contact</title>
+            </Helmet>
             <>
                 <Nav show={show} setShow={setShow}/>
                 <header>
