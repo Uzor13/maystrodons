@@ -4,6 +4,7 @@ import AuthProvider from "./context/Auth/AuthContext";
 import DataProvider from "./context/Data/DataContext";
 
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 //Components
 import Nav from "./components/Hero/Nav/Nav";
@@ -14,13 +15,9 @@ import Players from "./components/Players/Players";
 import Fixtures from "./components/Fixtures/Fixtures";
 import GameStats from "./components/Stats/GameStats";
 import Footer from "./components/Footer/Footer";
-import Login from "./components/Admin/Auth/Login";
-import Register from "./components/Admin/Auth/Register";
-import Dashboard from "./components/Admin/Dashboard";
-import AddPlayer from "./components/Admin/Players/AddPlayer";
-import UpcomingFixture from "./components/Admin/Fixtures/UpcomingFixture";
-import Fixture from "./components/Admin/Fixtures/Fixture";
-import Contact from "./components/Contact/Contact";
+import Contact from "./pages/Contact/Contact";
+import FixturesPage from "./pages/Fixtures/FixturesPage";
+import SchedulesPage from "./pages/Schedules/SchedulesPage";
 
 function App() {
     return (
@@ -40,6 +37,8 @@ function App() {
                             </div>
                         </Route>
                         <Route component={Contact} path="/contact"/>
+                        <Route component={FixturesPage} path="/fixtures" />
+                        <Route component={SchedulesPage} path="/schedules" />
                     </Switch>
                 </Router>
             </DataProvider>

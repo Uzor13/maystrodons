@@ -1,7 +1,8 @@
 :root {
-    --dark: #212121;
+    --dark: #111827;
+    --accent-dark: #374151;
     --light: #fff;
-    --primary: #98002e;
+    --primary: #991B1B;
     --font-small: 0.5rem;
     --font-base: 1rem;
     --font-medium: 1.5rem;
@@ -32,6 +33,10 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 body {
@@ -282,7 +287,7 @@ button {
 
 .about-section {
     margin-top: 1rem;
-    height: 450px;
+    height: 100vh;
     padding: 0 2rem;
     color: var(--dark);
 }
@@ -306,7 +311,7 @@ button {
 
 .news-section {
     background: var(--dark);
-    height: 600px;
+    height: 100vh;
     color: var(--light);
     padding: 2rem;
 }
@@ -363,7 +368,7 @@ button {
 
 .players-section {
     background: var(--dark);
-    height: 600px;
+    height: 100vh;
     padding: 2rem;
     color: var(--light);
 }
@@ -408,7 +413,7 @@ button .slick-prev .slick-arrow {
 
 .fixtures-section {
     padding: 2rem;
-    height: 650px;
+    height: 100vh;
 }
 
 .fixtures {

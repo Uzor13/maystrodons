@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import Nav from "../Hero/Nav/Nav";
+import Nav from "../../components/Hero/Nav/Nav";
 import Logo from "../../assets/img/MAYSTRODONS.svg";
 import {useFormik} from "formik";
 import {DataContext} from "../../context/Data/DataContext";

@@ -1,5 +1,7 @@
 import React from 'react';
 import Logo from './../../../assets/img/MAYSTRODONS.svg'
+import {HashLink} from 'react-router-hash-link';
+import {Link} from 'react-router-dom'
 const Nav = ({show, setShow}) => {
 
     if (!show) {
@@ -18,12 +20,13 @@ const Nav = ({show, setShow}) => {
                 </div>
             </div>
             <ul className="pop-up-nav__ul">
-                <li><a href="/">HOME</a></li>
-                <li><a href="/">ABOUT</a></li>
-                <li><a href="/">NEWS</a></li>
-                <li><a href="/">FIXTURES</a></li>
-                <li><a href="/">STATS</a></li>
-                <li><a href="/">CONTACT</a></li>
+                <li><Link smooth to="/">HOME</Link></li>
+                <li><HashLink smooth to="/#about">ABOUT</HashLink></li>
+                <li><Link to="/news">NEWS</Link></li>
+                <li><Link to="/fixtures">FIXTURES</Link></li>
+                <li><Link to="/schedules">SCHEDULES</Link></li>
+                <li><Link to="/stats">STATS</Link></li>
+                <li><Link to="/contact">CONTACT</Link></li>
             </ul>
         </nav>
     );
