@@ -1,12 +1,13 @@
 import React from 'react';
 import NewsCard from "./NewsCard";
 
-const NewsCards = () => {
+const NewsCards = ({data}) => {
     return (
         <div className="news-cards">
-            <NewsCard/>
-            <NewsCard/>
-            <NewsCard/>
+            {data && data.map(data => (
+                <NewsCard data={data}/>
+            ))}
+
         </div>
     );
 };

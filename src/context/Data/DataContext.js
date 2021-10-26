@@ -10,6 +10,8 @@ const DataProvider = ({children}) => {
     const [allUpcomingFixtures, setAllUpcomingFixtures] = useState([]);
     const [fixtures, setFixtures] = useState([]);
     const [allFixtures, setAllFixtures] = useState([]);
+    const [allNews, setAllNews] = useState([]);
+    const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const [message, setMessage] = useState("");
@@ -19,7 +21,6 @@ const DataProvider = ({children}) => {
         await axios.get(`https://maystrodon-strapi.herokuapp.com/players`)
             .then(res => {
                 setPlayerData(res.data)
-                console.log(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -34,7 +35,6 @@ const DataProvider = ({children}) => {
         await axios.get(`https://maystrodon-strapi.herokuapp.com/upcoming-fixtures?_limit=3&_sort=id:DESC`)
             .then(res => {
                 setUpcomingFixtures(res.data)
-                console.log(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -48,7 +48,6 @@ const DataProvider = ({children}) => {
         await axios.get(`https://maystrodon-strapi.herokuapp.com/upcoming-fixtures?_sort=id:DESC`)
             .then(res => {
                 setAllUpcomingFixtures(res.data)
-                console.log(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -62,7 +61,6 @@ const DataProvider = ({children}) => {
         await axios.get(`https://maystrodon-strapi.herokuapp.com/fixtures?_limit=1&_sort=id:DESC`)
             .then(res => {
                 setFixtures(res.data)
-                console.log(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -77,7 +75,6 @@ const DataProvider = ({children}) => {
         await axios.get(`https://maystrodon-strapi.herokuapp.com/fixtures?_sort=id:DESC`)
             .then(res => {
                 setAllFixtures(res.data)
-                console.log(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -87,6 +84,32 @@ const DataProvider = ({children}) => {
             })
     }
 
+    const getAllNews = async () => {
+        setLoading(true)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/news?_sort=id:DESC`)
+            .then(res => {
+                setAllNews(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }
+    const getNews = async () => {
+        setLoading(true)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/news?_limit=3&_sort=id:DESC`)
+            .then(res => {
+                setNews(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }
 
     useEffect(() => {
         getPlayers()
@@ -94,6 +117,8 @@ const DataProvider = ({children}) => {
         getFixtures()
         getAllFixtures()
         getAllUpcomingFixtures()
+        getNews()
+        getAllNews()
     }, [])
 
 
@@ -121,7 +146,9 @@ const DataProvider = ({children}) => {
                 addContact,
                 allFixtures,
                 loading,
-                allUpcomingFixtures
+                allUpcomingFixtures,
+                news,
+                allNews
             }}>
             {children}
         </DataContext.Provider>

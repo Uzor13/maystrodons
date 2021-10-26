@@ -1,14 +1,14 @@
 import React from 'react';
-import Image from '../../assets/img/chris-mcintosh-EzWrW_39OcU-unsplash.jpg'
+import {Link} from "react-router-dom";
 
-const NewsCard = () => {
+const NewsCard = ({data}) => {
     return (
         <div className="news-card">
-            <img src={Image} alt=""/>
-                <div className="news-card-text">
-                    <h2>Lorem ipsum dolor sit amet</h2>
-                    <a href="#">Read More</a>
-                </div>
+            <img src={data.image_url} alt=""/>
+            <div className="news-card-text">
+                <h2>{data.title}</h2>
+                <Link to="/">Read More</Link>
+            </div>
         </div>
     );
 };

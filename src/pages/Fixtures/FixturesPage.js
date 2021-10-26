@@ -67,7 +67,9 @@ const FixturesPage = () => {
 
     if (loading) {
         return (
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-center align-items-center" style={{
+                height: '100%'
+            }}>
                 <Loader
                     type="Puff"
                     color="#00BFFF"

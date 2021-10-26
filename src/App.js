@@ -18,6 +18,7 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./pages/Contact/Contact";
 import FixturesPage from "./pages/Fixtures/FixturesPage";
 import SchedulesPage from "./pages/Schedules/SchedulesPage";
+import NewsPage from "./pages/News/NewsPage";
 
 function App() {
     return (
@@ -39,6 +40,7 @@ function App() {
                         <Route component={Contact} path="/contact"/>
                         <Route component={FixturesPage} path="/fixtures" />
                         <Route component={SchedulesPage} path="/schedules" />
+                        <Route component={NewsPage} path="/news"/>
                     </Switch>
                 </Router>
             </DataProvider>
