@@ -6,7 +6,7 @@ import FixtureVenue from "./FixtureVenue";
 
 const Fixture = ({data}) => {
     return (
-        <div className="fixture">
+        <div className="fixture" key={data.id}>
             <FixtureDate data={data}/>
             <FixtureDetail data={data}/>
             <FixtureVenue data={data}/>

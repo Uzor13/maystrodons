@@ -3,6 +3,7 @@ import Fixture from "./Fixture";
 import Schedules from "./Schedules/Schedules";
 import {DataContext} from "../../context/Data/DataContext";
 import Loader from "react-loader-spinner";
+import {Link} from "react-router-dom";
 
 const Fixtures = () => {
 
@@ -32,7 +33,10 @@ const Fixtures = () => {
                     <>
                         <h1 className="title">FIXTURES</h1>
                         {fixtures.map(fixture => (
-                            <Fixture data={fixture}/>
+                            <Link to="/fixtures">
+                                <Fixture data={fixture}/>
+                            </Link>
+
                         ))}
                     </> : null}
                 {upcomingFixtures.length > 0 ?

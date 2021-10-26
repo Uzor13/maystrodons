@@ -18,6 +18,9 @@ const News = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const NewsPage = () => {
@@ -39,7 +42,6 @@ const NewsPage = () => {
 
         );
     }
-
     return (
         <Fragment>
             <Helmet>
@@ -70,7 +72,7 @@ const NewsPage = () => {
                             <img src={data.image_url} alt=""/>
                             <div className="news-card-text">
                                 <h2>{data.title}</h2>
-                                <Link to="/">Read More</Link>
+                                <Link to={`/news/${data.id}`}>Read More</Link>
                             </div>
                         </div>
                     </Fragment>

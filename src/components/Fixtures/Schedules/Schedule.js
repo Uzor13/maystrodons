@@ -5,7 +5,7 @@ import ScheduleVenue from "./ScheduleVenue";
 
 const Schedule = ({data}) => {
     return (
-        <div className="schedule">
+        <div className="schedule" key={data.id}>
             <ScheduleDate data={data}/>
             <ScheduleDetail data={data}/>
             <ScheduleVenue data={data}/>

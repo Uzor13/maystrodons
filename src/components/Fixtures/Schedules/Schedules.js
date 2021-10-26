@@ -2,6 +2,7 @@ import React, {useContext, Fragment} from 'react';
 import Schedule from "./Schedule";
 import {DataContext} from "../../../context/Data/DataContext";
 import Loader from "react-loader-spinner";
+import {Link} from "react-router-dom";
 
 const Schedules = () => {
 
@@ -27,7 +28,9 @@ const Schedules = () => {
     return (
         <div className="schedules">
             {upcomingFixtures.map(fixture => (
-                <Schedule data={fixture}/>
+                <Link to="/schedules">
+                    <Schedule data={fixture}/>
+                </Link>
             ))}
         </div>
     );

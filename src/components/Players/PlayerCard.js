@@ -3,7 +3,7 @@ import React from 'react';
 const PlayerCard = ({data}) => {
 
     return (
-        <div className="news-card" style={{width: "90%"}}>
+        <div className="news-card" style={{width: "90%"}} key={data.id}>
             <img src={data.image} alt=""/>
             <div className="news-card-text">
                 <div>

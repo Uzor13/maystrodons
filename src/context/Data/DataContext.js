@@ -12,6 +12,7 @@ const DataProvider = ({children}) => {
     const [allFixtures, setAllFixtures] = useState([]);
     const [allNews, setAllNews] = useState([]);
     const [news, setNews] = useState([]);
+    const [newsDetail, setNewsDetail] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const [message, setMessage] = useState("");
@@ -111,6 +112,21 @@ const DataProvider = ({children}) => {
             })
     }
 
+    const getSingleNews = async (id) => {
+        setLoading(true)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/news/${id}`)
+            .then(res => {
+                setNewsDetail([res.data])
+                console.log([res.data])
+            })
+            .catch(err => {
+                console.log(err)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }
+
     useEffect(() => {
         getPlayers()
         getUpcomingFixtures()
@@ -148,7 +164,9 @@ const DataProvider = ({children}) => {
                 loading,
                 allUpcomingFixtures,
                 news,
-                allNews
+                allNews,
+                getSingleNews,
+                newsDetail
             }}>
             {children}
         </DataContext.Provider>

@@ -19,6 +19,7 @@ import Contact from "./pages/Contact/Contact";
 import FixturesPage from "./pages/Fixtures/FixturesPage";
 import SchedulesPage from "./pages/Schedules/SchedulesPage";
 import NewsPage from "./pages/News/NewsPage";
+import NewsDetails from "./pages/News/NewsDetails";
 
 function App() {
     return (
@@ -38,9 +39,10 @@ function App() {
                             </div>
                         </Route>
                         <Route component={Contact} path="/contact"/>
-                        <Route component={FixturesPage} path="/fixtures" />
-                        <Route component={SchedulesPage} path="/schedules" />
-                        <Route component={NewsPage} path="/news"/>
+                        <Route component={FixturesPage} exact path="/fixtures" />
+                        <Route component={SchedulesPage} exact path="/schedules" />
+                        <Route component={NewsPage} exact path="/news"/>
+                        <Route component={NewsDetails} path="/news/:id"/>
                     </Switch>
                 </Router>
             </DataProvider>
