@@ -17,6 +17,11 @@
     --shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     --shadow-lg: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    --font-main: "Monument Extended", sans-serif;
+}
+
+::selection {
+    background: #FEE2E2;
 }
 
 html {
@@ -97,7 +102,7 @@ button {
 }
 
 .grid-container {
-    display: grid;
+    /*display: grid;*/
     /*grid-template-rows: 620px 1fr 1fr 1fr 730px 630px 150px;*/
     height: 100%;
 }
@@ -129,8 +134,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80%;
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 
 .pop-up-nav__ul > li {
@@ -290,6 +294,7 @@ button {
     height: 100vh;
     padding: 0 2rem;
     color: var(--dark);
+    border-bottom: 1px solid var(--accent-dark);
 }
 
 .about-section__content {
@@ -314,6 +319,7 @@ button {
     height: 100vh;
     color: var(--light);
     padding: 2rem;
+    border-bottom: 1px solid var(--accent-dark);
 }
 
 .news-header {
@@ -339,8 +345,8 @@ button {
 
 .news-card {
     width: 350px;
-    border-radius: .4rem;
-    height: 370px;
+    border-radius: .3rem;
+    height: 400px;
     position: relative;
     transition: 0.3s ease;
     background: var(--accent-dark);
@@ -349,19 +355,19 @@ button {
 
 .news-card:hover {
     box-shadow: var(--shadow-lg);
-    transform: scale(1.1);
 }
 
 .news-card img {
     object-fit: cover;
     width: 100%;
     filter: brightness(60%);
+    border-radius: .3rem;
 }
 
 .news-card-text {
     position: absolute;
-    text-align: center;
-    top: 60%;
+    text-align: left;
+    top: 50%;
     padding: 1rem;
 }
 
@@ -371,9 +377,10 @@ button {
 
 .players-section {
     background: var(--dark);
-    height: 100vh;
+    height: 600px;
     padding: 2rem;
     color: var(--light);
+    border-bottom: 1px solid var(--accent-dark);
 }
 
 .player-cards {
@@ -416,7 +423,9 @@ button .slick-prev .slick-arrow {
 
 .fixtures-section {
     padding: 2rem;
-    height: 100vh;
+    height: 700px;
+    border-bottom: 1px solid var(--accent-dark);
+    margin-bottom: 2rem;
 }
 
 .fixtures {
@@ -429,6 +438,7 @@ button .slick-prev .slick-arrow {
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: .3rem;
     background: var(--primary);
     width: 100%;
     padding: 1rem;
@@ -476,8 +486,9 @@ button .slick-prev .slick-arrow {
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: .3rem;
     background: var(--primary);
-    width: 400px;
+    width: 370px;
     padding: .6rem;
     align-items: center;
     gap: 0.6rem;
@@ -510,6 +521,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 200px;
 }
 
 footer a {
@@ -571,4 +583,10 @@ footer a {
 
 ::placeholder {
     color: var(--light);
+}
+
+.fixture-vs {
+    font-family: "Monument Extended", sans-serif;
+    color: #374151;
+    text-transform: uppercase;
 }

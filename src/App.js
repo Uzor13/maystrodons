@@ -20,6 +20,8 @@ import FixturesPage from "./pages/Fixtures/FixturesPage";
 import SchedulesPage from "./pages/Schedules/SchedulesPage";
 import NewsPage from "./pages/News/NewsPage";
 import NewsDetails from "./pages/News/NewsDetails";
+import PlayerStats from "./pages/Stats/PlayerStats";
+import TeamStats from "./pages/Stats/TeamStats";
 
 function App() {
     return (
@@ -34,7 +36,6 @@ function App() {
                                 <News/>
                                 <Players/>
                                 <Fixtures/>
-                                <GameStats/>
                                 <Footer/>
                             </div>
                         </Route>
@@ -43,6 +44,9 @@ function App() {
                         <Route component={SchedulesPage} exact path="/schedules" />
                         <Route component={NewsPage} exact path="/news"/>
                         <Route component={NewsDetails} path="/news/:id"/>
+                        <Route component={PlayerStats} path="/stats"/>
+                        <Route component={TeamStats} path="/stats/team"/>
+
                     </Switch>
                 </Router>
             </DataProvider>

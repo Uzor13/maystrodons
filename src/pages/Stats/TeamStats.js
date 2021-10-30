@@ -1,32 +1,19 @@
 import React, {Fragment, useContext, useState} from 'react';
+import styled from "styled-components";
 import {DataContext} from "../../context/Data/DataContext";
-import {Helmet} from "react-helmet";
 import Loader from "react-loader-spinner";
+import {Helmet} from "react-helmet";
 import Nav from "../../components/Hero/Nav/Nav";
 import {Link} from "react-router-dom";
 import Logo from "../../assets/img/MAYSTRODONS.svg";
-import styled from "styled-components";
 
-
-const Heading = styled.h1`
-    padding-top: 6rem;
-    padding-left: 2rem;
+const Table = styled.div`
+  padding: 6rem 2rem 0 2rem;
 `
 
-const News = styled.div`
-  padding: 2rem 2rem 0 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-  gap: 1rem;
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
-`
+const TeamStats = () => {
 
-const NewsPage = () => {
-
-    const {allNews, loading} = useContext(DataContext)
+    const {loading} = useContext(DataContext)
     const [show, setShow] = useState(false);
 
     if (loading) {
@@ -42,11 +29,13 @@ const NewsPage = () => {
 
         );
     }
+
+
     return (
         <Fragment>
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>Maystrodons - News</title>
+                <title>Maystrodons - Team Stats</title>
             </Helmet>
             <>
                 <Nav show={show} setShow={setShow}/>
@@ -62,25 +51,31 @@ const NewsPage = () => {
                     </div>
                 </header>
             </>
-            <Fragment>
-                <Heading>NEWS</Heading>
-            </Fragment>
-            <News>
-                {allNews && allNews.map(data => (
-                    <Fragment>
-                        <div className="news-card">
-                            <img src={data.image_url} alt=""/>
-                            <div className="news-card-text">
-                                <h2>{data.title}</h2>
-                                <Link to={`/news/${data.id}`}>Read More</Link>
-                            </div>
-                        </div>
-                    </Fragment>
-                ))}
-            </News>
-
+            <Table className="table-responsive">
+                <table className="table table-hover table-striped">
+                    <thead style={{background: "var(--accent-dark)"}}>
+                    <tr>
+                        <th>PLAYER</th>
+                        <th>G</th>
+                        <th>FG</th>
+                        <th>FG%</th>
+                        <th>3P%</th>
+                        <th>FT%</th>
+                        <th>OREB</th>
+                        <th>DREB</th>
+                        <th>REB</th>
+                        <th>AST</th>
+                        <th>STL</th>
+                        <th>TO</th>
+                        <th>PF</th>
+                    </tr>
+                    </thead>
+                </table>
+            </Table>
         </Fragment>
+
     );
 };
 
-export default NewsPage;
+export default TeamStats;
+

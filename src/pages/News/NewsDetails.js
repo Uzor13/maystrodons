@@ -6,6 +6,7 @@ import Logo from "../../assets/img/MAYSTRODONS.svg";
 import NewsDetail from "./NewsDetail";
 import {DataContext} from "../../context/Data/DataContext";
 import styled from 'styled-components'
+import Loader from "react-loader-spinner";
 
 const Container = styled.div`
   padding: 6rem 0 2rem 2rem;
@@ -13,17 +14,30 @@ const Container = styled.div`
 
 const NewsDetails = ({match}) => {
 
-    const {getSingleNews, newsDetail} = useContext(DataContext)
+    const {getSingleNews, newsDetail, loading} = useContext(DataContext)
 
     useEffect(() => {
         return () => {
             getSingleNews(match.params.id)
         };
-    }, []);
+    }, [match.params.id]);
 
 
     const [show, setShow] = useState(false);
 
+    if (loading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center">
+                <Loader
+                    type="Puff"
+                    color="#00BFFF"
+                    height={100}
+                    width={100}
+                />
+            </div>
+
+        );
+    }
     return (
         <Fragment>
             <Helmet>

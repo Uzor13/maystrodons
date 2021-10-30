@@ -2,11 +2,13 @@ import React from 'react';
 import Logo from './../../../assets/img/MAYSTRODONS.svg'
 import {HashLink} from 'react-router-hash-link';
 import {Link} from 'react-router-dom'
+
 const Nav = ({show, setShow}) => {
 
     if (!show) {
         return null
     }
+
 
     return (
         <nav className="pop-up-nav">
@@ -16,7 +18,7 @@ const Nav = ({show, setShow}) => {
                         <h1 style={{fontSize: "20px"}}>MAYSTRODONS</h1>
                 </a>
                 <div>
-                    <i className="fas fa-times" onClick={() => setShow(false)}/>
+                    <i className="fas fa-times me-5" onClick={() => setShow(false)}/>
                 </div>
             </div>
             <ul className="pop-up-nav__ul">

@@ -5,6 +5,7 @@ export const DataContext = createContext()
 
 const DataProvider = ({children}) => {
 
+    const [playersData, setPlayersData] = useState([]);
     const [playerData, setPlayerData] = useState([]);
     const [upcomingFixtures, setUpcomingFixtures] = useState([]);
     const [allUpcomingFixtures, setAllUpcomingFixtures] = useState([]);
@@ -21,7 +22,7 @@ const DataProvider = ({children}) => {
         setLoading(true)
         await axios.get(`https://maystrodon-strapi.herokuapp.com/players`)
             .then(res => {
-                setPlayerData(res.data)
+                setPlayersData(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -31,9 +32,24 @@ const DataProvider = ({children}) => {
             })
     }
 
+    const getPlayer = async (id) => {
+        setLoading(true)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/players/${id}`)
+            .then(res => {
+                setPlayerData([res.data])
+            })
+            .catch(err => {
+                console.log(err)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }
+
+
     const getUpcomingFixtures = async () => {
         setLoading(true)
-        await axios.get(`https://maystrodon-strapi.herokuapp.com/upcoming-fixtures?_limit=3&_sort=id:DESC`)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/upcoming-fixtures?_limit=3&_sort=date:DESC`)
             .then(res => {
                 setUpcomingFixtures(res.data)
             })
@@ -73,7 +89,7 @@ const DataProvider = ({children}) => {
 
     const getAllFixtures = async () => {
         setLoading(true)
-        await axios.get(`https://maystrodon-strapi.herokuapp.com/fixtures?_sort=id:DESC`)
+        await axios.get(`https://maystrodon-strapi.herokuapp.com/fixtures?_sort=date:DESC`)
             .then(res => {
                 setAllFixtures(res.data)
             })
@@ -135,6 +151,7 @@ const DataProvider = ({children}) => {
         getAllUpcomingFixtures()
         getNews()
         getAllNews()
+        getPlayer()
     }, [])
 
 
@@ -156,7 +173,7 @@ const DataProvider = ({children}) => {
             value={{
                 message,
                 getPlayers,
-                playerData,
+                playersData,
                 upcomingFixtures,
                 fixtures,
                 addContact,
@@ -166,7 +183,9 @@ const DataProvider = ({children}) => {
                 news,
                 allNews,
                 getSingleNews,
-                newsDetail
+                newsDetail,
+                playerData,
+                getPlayer
             }}>
             {children}
         </DataContext.Provider>

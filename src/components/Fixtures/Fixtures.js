@@ -40,7 +40,9 @@ const Fixtures = () => {
                         ))}
                     </> : null}
                 {upcomingFixtures.length > 0 ?
-                    <div className="mt-5">
+                    <div className="mt-5" style={{
+                        borderTop: "1px solid var(--accent-dark)"
+                    }}>
                         <h1 className="title" style={{marginTop: "1.5rem"}}>GAME SCHEDULES</h1>
                         <Schedules/>
                     </div> : null}

@@ -1,13 +1,15 @@
-import React, {useContext} from 'react';
+import React, {Fragment, useContext} from 'react';
 import PlayerCard from "./PlayerCard";
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {DataContext} from "../../context/Data/DataContext";
+import Loader from "react-loader-spinner";
+
 
 const PlayerCards = () => {
 
-    const {playerData} = useContext(DataContext)
+    const {playersData, loading} = useContext(DataContext)
 
 
     const settings = {
@@ -45,16 +47,26 @@ const PlayerCards = () => {
             // instead of a settings object
         ]
     };
+
+    if (loading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{
+                height: '100%'
+            }}>
+                <Loader
+                    type="Puff"
+                    color="#991B1B"
+                    height={100}
+                    width={100}
+                />
+            </div>
+
+        );
+    }
+
     return (
-        <Slider style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, 1fr)",
-            gridTemplateRows: "1fr",
-            gap: "1rem",
-            marginTop: "2rem",
-            width: "100%",
-        }} {...settings}>
-            {playerData.map(player => (
+        <Slider className="player-cards" {...settings}>
+            {playersData.map(player => (
                 <PlayerCard data={player}/>
             ))}
         </Slider>

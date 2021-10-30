@@ -17,7 +17,7 @@ const Img = styled.img`
 
 const NewsHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 1rem 0;
@@ -27,7 +27,8 @@ const NewsHeaderSub = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 30%;
+  margin-bottom: 1rem;
+
 `
 
 const Subtitle = styled.div`
@@ -42,23 +43,23 @@ const NewsDetail = ({data}) => {
         <Container key={data.id}>
             <Img src={data.image_url} alt="" className="img-fluid"/>
             <NewsHeader>
-                <h1>{data.title}</h1>
-                <NewsHeaderSub>
-                    <Subtitle>
-                        <i className="fas fa-user"/>
-                        <p>{data.author_name}</p>
-                    </Subtitle>
-                    <Subtitle>
-                        <i className="fas fa-calendar"/>
-                        <p>{data.date}</p>
-                    </Subtitle>
-                    <Subtitle>
-                        <i className="fas fa-clock"/>
-                        <p>{data.time}</p>
-                    </Subtitle>
-
-                </NewsHeaderSub>
+                <h1 className="text-center">{data.title}</h1>
             </NewsHeader>
+            <NewsHeaderSub>
+                <Subtitle>
+                    <i className="fas fa-user"/>
+                    <p>{data.author_name}</p>
+                </Subtitle>
+                <Subtitle>
+                    <i className="fas fa-calendar"/>
+                    <p>{data.date}</p>
+                </Subtitle>
+                <Subtitle>
+                    <i className="fas fa-clock"/>
+                    <p>{data.time}</p>
+                </Subtitle>
+
+            </NewsHeaderSub>
             <div>
                 <p>{data.news_content}</p>
             </div>
