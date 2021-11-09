@@ -14,12 +14,13 @@ const Header = () => {
             <div className="outer-nav">
                 <Link to="/" className="nav-brand">
                     <img src={Logo} className="logo" alt=""/>
-                        <h1 style={{fontSize: "20px"}}>MAYSTRODONS</h1>
-                </Link>
+                     <h1 className="nav-logo-text">MAYSTRODONS</h1>
+              </Link>
                 <div className="cta-nav">
-                    <Link to={`/contact`}>
+                    <
+                        Link to={`/contact`}>
                         <button className="cta-btn">Get in Touch</button>
-                    </Link>
+                </Link>
                     <i className="fas fa-bars" onClick={() => setShow(true)}/>
                 </div>
             </div>

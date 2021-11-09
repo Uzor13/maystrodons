@@ -76,6 +76,7 @@ a {
     text-decoration: none;
 }
 
+
 button {
     border: none;
     outline: none;
@@ -243,6 +244,10 @@ button {
     width: 4.5rem;
 }
 
+.nav-logo-text {
+    font-size: 20px;
+}
+
 .outer-nav i {
     font-size: var(--font-medium);
     padding-right: 1.5rem;
@@ -281,6 +286,11 @@ button {
     animation: rotateIgnite 15s linear;
     animation-iteration-count: infinite;
     width: 180px;
+}
+
+.hero-content__spinner img:hover, .hero-content__spinner i:hover  {
+    animation-play-state: paused;
+    cursor: pointer;
 }
 
 .hero-content__spinner i {
@@ -546,9 +556,6 @@ footer a {
     text-align: center;
 }
 
-.contact-form form {
-    width: 50%;
-}
 
 .contact-form input {
     width: 100%;
@@ -570,15 +577,20 @@ footer a {
     color: var(--light);
     background: transparent;
     outline: none;
-    border: 1.5px solid #b5b5b5;
+    border: 1px solid #b5b5b5;
     caret-color: #98002e;
     padding-left: 1rem;
+}
+
+.contact-form textarea:focus {
+    border-color: var(--light);
 }
 
 .contact-form button {
     padding: .5rem 1rem;
     border-radius: 3rem;
     font-weight: var(--font-bold);
+    background-color: var(--light);
 }
 
 ::placeholder {

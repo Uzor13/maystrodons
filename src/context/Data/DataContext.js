@@ -151,7 +151,6 @@ const DataProvider = ({children}) => {
         getAllUpcomingFixtures()
         getNews()
         getAllNews()
-        getPlayer()
     }, [])
 
 

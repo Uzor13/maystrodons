@@ -10,6 +10,7 @@ import styled from 'styled-components'
 
 const Table = styled.div`
   padding: 2rem;
+  color: var(--light);
 `
 
 const Heading = styled.h1`
@@ -19,7 +20,7 @@ const Heading = styled.h1`
 
 const PlayerStats = () => {
 
-    const {loading} = useContext(DataContext)
+    const {loading, playersData} = useContext(DataContext)
     const [show, setShow] = useState(false);
 
     if (loading) {
@@ -35,6 +36,7 @@ const PlayerStats = () => {
 
         );
     }
+
 
 
     return (
@@ -57,12 +59,14 @@ const PlayerStats = () => {
                     </div>
                 </header>
             </>
-            <Heading>2021-22 Team Statistics</Heading>
+            <Heading>2021-22 Player Statistics</Heading>
             <Table className="table-responsive">
                 <table className="table table-hover table-striped">
                     <thead style={{background: "var(--accent-dark)"}}>
                     <tr>
+                        <th>Player</th>
                         <th>G</th>
+                        <th>PTS</th>
                         <th>FG</th>
                         <th>FG%</th>
                         <th>3P%</th>
@@ -76,6 +80,36 @@ const PlayerStats = () => {
                         <th>PF</th>
                     </tr>
                     </thead>
+                    {playersData.map(player => (
+                        <tbody key={player.id}>
+                            <tr>
+                                <td className="text-light d-flex flex-column g-2">
+                                    <img src={player.image} alt=""/>
+                                    {player.last_name} {" "} {player.first_name}
+                                    {player.player_number}
+                                    {player.position}
+                                </td>
+                                { player.player_stats.map(stat => (
+                                    <Fragment key={stat.id}>
+                                        <td className="text-light">{stat.g || "-"}</td>
+                                        <td className="text-light">{stat.pts || "-"}</td>
+                                        <td className="text-light">{stat.fg || "-"}</td>
+                                        <td className="text-light">{stat.fg_percent || "-"}%</td>
+                                        <td className="text-light">{stat.three_percent || "-"}%</td>
+                                        <td className="text-light">{stat.ft_percent || "-"}%</td>
+                                        <td className="text-light">{stat.oreb || "-"}</td>
+                                        <td className="text-light">{stat.dreb || "-"}</td>
+                                        <td className="text-light">{stat.reb || "-"}</td>
+                                        <td className="text-light">{stat.ast || "-"}</td>
+                                        <td className="text-light">{stat.stl || "-"}</td>
+                                        <td className="text-light">{stat.to || "-"}</td>
+                                        <td className="text-light">{stat.pf || "-"}</td>
+                                    </Fragment>
+
+                                ))}
+                            </tr>
+                        </tbody>
+                    ))}
                 </table>
             </Table>
         </Fragment>

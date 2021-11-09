@@ -55,7 +55,6 @@ const TeamStats = () => {
                 <table className="table table-hover table-striped">
                     <thead style={{background: "var(--accent-dark)"}}>
                     <tr>
-                        <th>PLAYER</th>
                         <th>G</th>
                         <th>FG</th>
                         <th>FG%</th>
