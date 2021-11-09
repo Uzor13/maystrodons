@@ -1,2 +1,2 @@
 # Maystrodons
-![Alt](https://repobeats.axiom.co/api/embed/c0f3e1d5663c1b9519b3ce27707c9ed91e37dcbc.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/d2442b1620643582c5f59e62d64412ec8bbf257d.svg "Repobeats analytics image")
