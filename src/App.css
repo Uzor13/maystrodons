@@ -1,5 +1,5 @@
 :root {
-    --dark: #111827;
+    --dark: #000;
     --accent-dark: #374151;
     --light: #fff;
     --primary: #991B1B;
@@ -319,8 +319,9 @@ button {
 
 .about-section__text p {
     width: 80%;
-    font-size: var(--font-base);
+    font-size: var(--font-medium);
     font-weight: var(--font-normal);
+    line-height: 2.5rem;
     color: var(--light);
 }
 
