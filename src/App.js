@@ -22,6 +22,7 @@ import NewsPage from "./pages/News/NewsPage";
 import NewsDetails from "./pages/News/NewsDetails";
 import PlayerStats from "./pages/Stats/PlayerStats";
 import TeamStats from "./pages/Stats/TeamStats";
+import GameStatistics from "./pages/Stats/GameStatistics";
 
 function App() {
     return (
@@ -44,8 +45,9 @@ function App() {
                         <Route component={SchedulesPage} exact path="/schedules" />
                         <Route component={NewsPage} exact path="/news"/>
                         <Route component={NewsDetails} path="/news/:id"/>
-                        <Route component={PlayerStats} path="/stats"/>
+                        <Route component={PlayerStats} exact path="/stats"/>
                         <Route component={TeamStats} path="/stats/team"/>
+                        <Route component={GameStatistics} path="/stats/game"/>
 
                     </Switch>
                 </Router>

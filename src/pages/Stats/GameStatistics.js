@@ -1,14 +1,13 @@
-import React, {Fragment, useContext, useState} from 'react';
-import styled from "styled-components";
-import {DataContext} from "../../context/Data/DataContext";
-import Loader from "react-loader-spinner";
+import React, {Fragment, useState} from 'react';
 import {Helmet} from "react-helmet";
 import Nav from "../../components/Hero/Nav/Nav";
 import {Link} from "react-router-dom";
 import Logo from "../../assets/img/MAYSTRODONS.svg";
+import styled from "styled-components";
 
 const Table = styled.div`
   padding: 2rem;
+  color: var(--light);
 `
 
 const Heading = styled.h1`
@@ -16,31 +15,16 @@ const Heading = styled.h1`
     padding-left: 2rem;
 `
 
-const TeamStats = () => {
 
-    const {loading} = useContext(DataContext)
+const GameStatistics = () => {
+
     const [show, setShow] = useState(false);
-
-    if (loading) {
-        return (
-            <div className="d-flex justify-content-center align-items-center">
-                <Loader
-                    type="Puff"
-                    color="#00BFFF"
-                    height={100}
-                    width={100}
-                />
-            </div>
-
-        );
-    }
-
 
     return (
         <Fragment>
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>Maystrodons - Team Stats</title>
+                <title>Maystrodons - Game Stats</title>
             </Helmet>
             <>
                 <Nav show={show} setShow={setShow}/>
@@ -56,12 +40,14 @@ const TeamStats = () => {
                     </div>
                 </header>
             </>
-            <Heading>2021-22 Team Statistics</Heading>
+            <Heading>2021-22 Game Statistics</Heading>
             <Table className="table-responsive">
                 <table className="table table-hover table-striped">
                     <thead style={{background: "var(--accent-dark)"}}>
                     <tr>
+                        <th>Player</th>
                         <th>G</th>
+                        <th>PTS</th>
                         <th>FG</th>
                         <th>FG%</th>
                         <th>3P%</th>
@@ -78,9 +64,7 @@ const TeamStats = () => {
                 </table>
             </Table>
         </Fragment>
-
     );
 };
 
-export default TeamStats;
-
+export default GameStatistics;

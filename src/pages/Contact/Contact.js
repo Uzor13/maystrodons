@@ -69,7 +69,7 @@ const Contact = () => {
             <div className="contact-form">
                 <h1 className="contact-title">REACH OUT TO US FOR ANY INQUIRY</h1>
                 {message && <p>{message}</p>}
-                <form className="" onSubmit={formik.handleSubmit}>
+                <form className="contact-form_container" onSubmit={formik.handleSubmit}>
                     <div className="mb-3 mt-5">
                         <input type="text" placeholder="Full Name*" name="name" value={formik.values.name}
                                onChange={formik.handleChange} onBlur={formik.handleBlur}/>
