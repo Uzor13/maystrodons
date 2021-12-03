@@ -2,12 +2,12 @@
     --dark: #000;
     --accent-dark: #374151;
     --light: #fff;
-    --primary: #991B1B;
+    --primary: #F3A5D9;
     --font-small: 0.5rem;
     --font-base: 1rem;
     --font-medium: 1.5rem;
-    --font-large: 2.5rem;
-    --font-larger: 3.5rem;
+    --font-large: 2rem;
+    --font-larger: 2.5rem;
     --font-bold: 700;
     --font-normal: 400;
     --rounded: 0.5rem;
@@ -288,7 +288,7 @@ button {
     width: 180px;
 }
 
-.hero-content__spinner img:hover, .hero-content__spinner i:hover  {
+.hero-content__spinner img:hover, .hero-content__spinner i:hover {
     animation-play-state: paused;
     cursor: pointer;
 }
